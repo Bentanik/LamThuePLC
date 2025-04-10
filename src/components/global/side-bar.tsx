@@ -14,7 +14,7 @@ import SidebarExtra from './side-bar-extra'
 export default function Sidebar() {
 
     return (
-        <nav className="flex flex-col justify-between items-center w-[10vw] bg-black text-white">
+        <nav className="flex flex-col justify-between items-center w-[9vw] bg-black text-white">
             <div className='flex flex-col items-center w-full'>
                 <SidebarItem
                     tooltip='Trang Chủ'
@@ -44,11 +44,11 @@ export default function Sidebar() {
             </div>
             <div className='flex flex-row justify-evenly w-full items-center pb-10'>
                 <SidebarExtra
-                    icon={<User />}
+                    icon={<User size={22} />}
                     tooltip='tài khoản'
                 />
                 <SidebarExtra
-                    icon={<LogOut />}
+                    icon={<LogOut size={22} />}
                     tooltip='đăng xuất'
                 />
             </div>

@@ -78,6 +78,18 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   --hover-bg: rgba(27, 27, 27, 0.633);
+
+  --droplet-bg: #E0F2FE;
+  --droplet-col: #3B82F6;
+
+  --weight-bg: #EDE9FE;
+  --weight-col: #8B5CF6;
+
+  --gauge-bg: #DCFCE7;
+  --gauge-col: #16A34A;
+
+  --electric-bg: #FEF3C7;
+  --electric-col: #F59E0B;
 }
 
 .dark {

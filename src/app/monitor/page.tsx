@@ -1,13 +1,8 @@
-import { Button } from "@/components/ui/button";
+import MonitorModule from "@/components/monitor/monitor-module";
 
 export default function MonitorPage() {
 
   return (
-    <div>
-      hi
-      <Button>
-        aaa
-      </Button>
-    </div>
+    <MonitorModule />
   )
 }

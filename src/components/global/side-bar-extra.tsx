@@ -16,12 +16,13 @@ export default function SidebarExtra({ icon, tooltip }: Prop) {
                     <Button
                         className='hover:cursor-pointer'
                         variant={'ghost'}
+                        size={'default'}
                     >
                         {icon}
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p className="text-sm font-bold tracking-wider capitalize">{tooltip}</p>
+                    <p className="text-xs font-bold tracking-wider capitalize">{tooltip}</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>

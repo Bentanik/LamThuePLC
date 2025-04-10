@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextTopLoader color="cyan" height={3} />
+        <NextTopLoader color="blue" height={3} />
         {children}
       </body>
     </html>

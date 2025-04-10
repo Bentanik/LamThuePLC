@@ -34,13 +34,12 @@ export default function SidebarItem({ tooltip, href, icon }: Prop) {
                                 ref={playerRef}
                                 icon={icon}
                                 colorize='white'
-                                size={50}
+                                size={40}
                             />
-                            {/* {icon} */}
                         </Link>
                     </TooltipTrigger>
                     <TooltipContent>
-                        <p className="text-base font-bold tracking-wider capitalize">{tooltip}</p>
+                        <p className="text-sm font-bold tracking-widest capitalize">{tooltip}</p>
                     </TooltipContent>
                 </Tooltip>
             </TooltipProvider>
