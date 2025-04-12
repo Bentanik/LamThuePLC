@@ -25,15 +25,15 @@ export default function SidebarItem({ tooltip, href, icon }: Prop) {
                         <Link
                             href={href}
                             onMouseEnter={() => playerRef.current?.playFromBeginning()}
-                            className="
+                            className={`
                                 py-5 w-full flex items-center justify-center
-                                hover:cursor-pointer hover:bg-[var(--hover-bg)] 
-                            "
+                                hover:cursor-pointer hover:bg-[var(--b-hover-bg)] 
+                            `}
                         >
                             <Player
                                 ref={playerRef}
                                 icon={icon}
-                                colorize='white'
+                                colorize={'white'}
                                 size={40}
                             />
                         </Link>

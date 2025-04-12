@@ -43,7 +43,7 @@ export default function MonitorStat({ icon, value, unit, label }: Prop) {
                 onChange={(e) => setVal(e.target.value)}
             />
             <p className={`pb-1 text-lg font-bold tracking-wider ${mode == 'edit' && 'hidden'}`}>{val} {unit}</p>
-            <p className="text-sm capitalize tracking-wider">{label}</p>
+            <p className="text-sm font-semibold capitalize tracking-wider">{label}</p>
         </div>
     )
 }

@@ -28,7 +28,7 @@ export default function MonitorHeader() {
     <>
       <nav className="px-5 py-3 w-full text-white bg-black">
         <div className="flex flex-row justify-between w-full items-center">
-          <p className="text-lg font-bold tracking-wider capitalize">Màn hình giám sát</p>
+          <p className="text-xl font-bold tracking-wider capitalize">Màn hình giám sát</p>
           <div className="flex flex-row gap-5 items-center">
             <p className="text-lg font-bold tracking-wider capitalize">Trạng Thái</p>
             <Popover open={open} onOpenChange={setOpen}>

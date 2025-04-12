@@ -13,6 +13,7 @@ import SidebarExtra from './side-bar-extra'
 
 export default function Sidebar() {
 
+
     return (
         <nav className="flex flex-col justify-between items-center w-[9vw] bg-black text-white">
             <div className='flex flex-col items-center w-full'>
@@ -23,7 +24,7 @@ export default function Sidebar() {
                 />
                 <SidebarItem
                     tooltip='Giám Sát'
-                    href={'#'}
+                    href={'monitor'}
                     icon={MonitorIcon}
                 />
                 <SidebarItem
@@ -38,7 +39,7 @@ export default function Sidebar() {
                 />
                 <SidebarItem
                     tooltip='Thống kê'
-                    href={'#'}
+                    href={'graph'}
                     icon={GraphIcon}
                 />
             </div>

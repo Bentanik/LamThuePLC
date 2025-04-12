@@ -77,7 +77,8 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --hover-bg: rgba(27, 27, 27, 0.633);
+  --b-hover-bg: rgba(27, 27, 27, 0.633);
+  --w-hover-bg: rgb(237, 237, 237);
 
   --droplet-bg: #E0F2FE;
   --droplet-col: #3B82F6;
@@ -90,6 +91,9 @@
 
   --electric-bg: #FEF3C7;
   --electric-col: #F59E0B;
+
+  --wave-bg: #CCFBF1;
+  --wave-col: #0D9488;
 }
 
 .dark {
