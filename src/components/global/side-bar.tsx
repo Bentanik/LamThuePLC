@@ -29,12 +29,12 @@ export default function Sidebar() {
                 />
                 <SidebarItem
                     tooltip='Cài Đặt'
-                    href={'#'}
+                    href={'setting'}
                     icon={SettingIcon}
                 />
                 <SidebarItem
-                    tooltip='Vấn Đề'
-                    href={'#'}
+                    tooltip='Cảnh báo'
+                    href={'warning'}
                     icon={WarningIcon}
                 />
                 <SidebarItem
