@@ -11,7 +11,7 @@ export default function SidebarExtra({ icon, tooltip }: Prop) {
 
     return (
         <TooltipProvider>
-            <Tooltip>
+            <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild>
                     <Button
                         className='hover:cursor-pointer'
