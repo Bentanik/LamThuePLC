@@ -1,3 +1,5 @@
+'use client'
+
 import Sidebar from "@/components/global/side-bar";
 import SettingHeader from "@/components/setting/setting-header";
 

@@ -1,3 +1,5 @@
+'use client'
+
 import Sidebar from "@/components/global/side-bar";
 import MonitorHeader from "@/components/monitor/monitor-header";
 

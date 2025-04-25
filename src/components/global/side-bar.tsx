@@ -1,16 +1,14 @@
-'use client'
-
 import HomeIcon from '../../../public/animated/system-solid-41-home-hover-home-2.json'
 import MonitorIcon from '../../../public/animated/system-solid-42-search-hover-search.json'
 import SettingIcon from '../../../public/animated/system-solid-63-settings-cog-hover-cog-3.json'
 import WarningIcon from '../../../public/animated/system-solid-56-warning-hover-warning.json'
 import GraphIcon from '../../../public/animated/system-solid-10-analytics-hover-analytics.json'
-import SidebarItem from "./side-bar-item";
-import { LogOut, User } from 'lucide-react'
+import { ChartNoAxesColumn, Cog, House, LogOut, Monitor, TriangleAlert, User } from 'lucide-react'
 import SidebarExtra from './side-bar-extra'
+import SidebarItem from './side-bar-item'
+
 
 export default function Sidebar() {
-
 
     return (
         <nav className="flex flex-col justify-between items-center w-[9vw] bg-black text-white">
@@ -18,27 +16,27 @@ export default function Sidebar() {
                 <SidebarItem
                     tooltip='Trang Chủ'
                     href={'#'}
-                    icon={HomeIcon}
+                    icon={<House size={35} />}
                 />
                 <SidebarItem
                     tooltip='Giám Sát'
                     href={'monitor'}
-                    icon={MonitorIcon}
+                    icon={<Monitor size={35} />}
                 />
                 <SidebarItem
                     tooltip='Cài Đặt'
                     href={'setting'}
-                    icon={SettingIcon}
+                    icon={<Cog size={35} />}
                 />
                 <SidebarItem
                     tooltip='Cảnh báo'
                     href={'warning'}
-                    icon={WarningIcon}
+                    icon={<TriangleAlert size={35} />}
                 />
                 <SidebarItem
                     tooltip='Thống kê'
                     href={'graph'}
-                    icon={GraphIcon}
+                    icon={<ChartNoAxesColumn size={35} />}
                 />
             </div>
             <div className='flex flex-row justify-evenly w-full items-center pb-10'>

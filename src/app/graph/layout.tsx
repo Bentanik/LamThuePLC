@@ -1,3 +1,5 @@
+'use client'
+
 import Sidebar from "@/components/global/side-bar";
 import GraphHeader from "@/components/graph/graph-header";
 

@@ -20,6 +20,8 @@ import { CalendarIcon, ExternalLink, Search, TriangleAlert } from "lucide-react"
 import { Calendar } from "../ui/calendar"
 import { cn } from "@/lib/utils"
 import { format } from "date-fns"
+import { vi } from 'date-fns/locale';
+
 
 
 export default function WarningModule() {
@@ -141,7 +143,7 @@ export default function WarningModule() {
                 )}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {from ? format(from, "PPP") : <span className="font-semibold tracking-wider">Chọn ngày</span>}
+                {from ? format(from, "dd/MM/yyyy") : <span className="font-semibold tracking-wider">Chọn ngày</span>}
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
@@ -150,6 +152,7 @@ export default function WarningModule() {
                 selected={from}
                 onSelect={setFrom}
                 initialFocus
+                locale={vi}
               />
             </PopoverContent>
           </Popover>
@@ -163,11 +166,11 @@ export default function WarningModule() {
                 variant={"outline"}
                 className={cn(
                   "w-[20vw] justify-start text-left font-normal",
-                  !from && "text-muted-foreground"
+                  !to && "text-muted-foreground"
                 )}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
-                {from ? format(from, "PPP") : <span className="font-semibold tracking-wider">Chọn ngày</span>}
+                {to ? format(to, "dd/MM/yyyy") : <span className="font-semibold tracking-wider">Chọn ngày</span>}
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
@@ -176,6 +179,7 @@ export default function WarningModule() {
                 selected={to}
                 onSelect={setTo}
                 initialFocus
+                locale={vi}
               />
             </PopoverContent>
           </Popover>
@@ -202,7 +206,7 @@ export default function WarningModule() {
           </Button>
         </div>
 
-        <div className="flex flex-col gap-2 p-5 w-full bg-yellow-100/80 rounded-md transition duration-300 hover:shadow-xl">
+        <div className="flex flex-col gap-2 px-5 py-3 w-full bg-yellow-100/80 rounded-md transition duration-300 hover:shadow-xl">
           <div className="flex flex-row gap-2 items-center">
             <TriangleAlert color="orange" size={18} />
             <p className="text-base font-bold tracking-wider capitalize">các cảnh báo trong bảng</p>
