@@ -9,8 +9,6 @@ import SidebarItem from "./side-bar-item";
 import { LogOut, User } from 'lucide-react'
 import SidebarExtra from './side-bar-extra'
 
-
-
 export default function Sidebar() {
 
 

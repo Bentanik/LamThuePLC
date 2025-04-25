@@ -60,7 +60,7 @@ export default function AuthCarousel() {
                 ))}
             </div>
 
-            <div className="absolute bottom-6 right-6 flex gap-x-4">
+            {/* <div className="absolute bottom-6 right-6 flex gap-x-4">
                 <motion.button
                     className="w-12 h-12 bg-white/20 hover:bg-white/30 text-white flex items-center justify-center rounded-full shadow-md transition duration-300 backdrop-blur-md"
                     onClick={prevSlide}
@@ -75,7 +75,7 @@ export default function AuthCarousel() {
                 >
                     <MoveRightIcon className="w-6 h-6" />
                 </motion.button>
-            </div>
+            </div> */}
         </div>
     );
 }
