@@ -4,14 +4,24 @@ import AuthCarousel from "@/components/auth_carousel";
 import { MoveLeftIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useAuth } from "@/context/auth-context";
+import { useEffect } from "react";
 
 export default function AuthLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-
     const router = useRouter();
+    const { user } = useAuth();
+
+    useEffect(() => {
+        if (!user) {
+            router.push("/login");
+        } else {
+            window.location.href = "/graph";
+        }
+    }, [user]);
 
     return (
         <motion.div

@@ -1,3 +1,5 @@
+'use client';
+
 import HomeIcon from '../../../public/animated/system-solid-41-home-hover-home-2.json'
 import MonitorIcon from '../../../public/animated/system-solid-42-search-hover-search.json'
 import SettingIcon from '../../../public/animated/system-solid-63-settings-cog-hover-cog-3.json'
@@ -6,10 +8,24 @@ import GraphIcon from '../../../public/animated/system-solid-10-analytics-hover-
 import { ChartNoAxesColumn, Cog, House, LogOut, Monitor, TriangleAlert, User } from 'lucide-react'
 import SidebarExtra from './side-bar-extra'
 import SidebarItem from './side-bar-item'
+import { useAuth } from '@/context/auth-context';
+import { useBackdrop } from '@/context/backdrop_context';
 
 
 export default function Sidebar() {
+    const { signOut } = useAuth();
+    const { showBackdrop, hideBackdrop } = useBackdrop();
 
+    const handleLogout = async () => {
+        try {
+            showBackdrop();
+            signOut();
+            window.location.href = "/login";
+        } catch (err) {
+        } finally {
+            hideBackdrop();
+        }
+    }
     return (
         <nav className="flex flex-col justify-between items-center w-[9vw] bg-black text-white">
             <div className='flex flex-col items-center w-full'>
@@ -44,10 +60,12 @@ export default function Sidebar() {
                     icon={<User size={22} />}
                     tooltip='tài khoản'
                 />
-                <SidebarExtra
-                    icon={<LogOut size={22} />}
-                    tooltip='đăng xuất'
-                />
+                <div onClick={handleLogout}>
+                    <SidebarExtra
+                        icon={<LogOut size={22} />}
+                        tooltip='đăng xuất'
+                    />
+                </div>
             </div>
         </nav>
     );

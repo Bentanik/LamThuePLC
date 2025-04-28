@@ -1,30 +1,11 @@
 'use client';
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { LogInIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import InputAuth from "@/components/input_auth";
-
-const schema = z.object({
-    email: z.string().email("Email không hợp lệ"),
-    password: z.string().min(6, "Mật khẩu phải có ít nhất 6 ký tự"),
-});
+import { useLogin } from "@/hooks/use-login";
 
 export default function LoginForm() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({
-        resolver: zodResolver(schema),
-    });
-
-    const onSubmit = (data: any) => {
-        console.log("Đăng nhập với:", data);
-    };
+    const { register, handleSubmit, errors, onSubmit } = useLogin();
 
     return (
         <motion.div
@@ -70,7 +51,6 @@ export default function LoginForm() {
                                 register={register("password")}
                                 error={errors.password?.message}
                             />
-
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
