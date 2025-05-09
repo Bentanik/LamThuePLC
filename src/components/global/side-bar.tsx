@@ -1,10 +1,5 @@
 'use client';
 
-import HomeIcon from '../../../public/animated/system-solid-41-home-hover-home-2.json'
-import MonitorIcon from '../../../public/animated/system-solid-42-search-hover-search.json'
-import SettingIcon from '../../../public/animated/system-solid-63-settings-cog-hover-cog-3.json'
-import WarningIcon from '../../../public/animated/system-solid-56-warning-hover-warning.json'
-import GraphIcon from '../../../public/animated/system-solid-10-analytics-hover-analytics.json'
 import { ChartNoAxesColumn, Cog, House, LogOut, Monitor, TriangleAlert, User } from 'lucide-react'
 import SidebarExtra from './side-bar-extra'
 import SidebarItem from './side-bar-item'
@@ -13,13 +8,13 @@ import { useBackdrop } from '@/context/backdrop_context';
 
 
 export default function Sidebar() {
-    const { signOut } = useAuth();
+    const { logout } = useAuth();
     const { showBackdrop, hideBackdrop } = useBackdrop();
 
     const handleLogout = async () => {
         try {
             showBackdrop();
-            signOut();
+            logout();
             window.location.href = "/login";
         } catch (err) {
         } finally {

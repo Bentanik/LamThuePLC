@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import InputAuth from "@/components/input_auth";
-import { useLogin } from "@/hooks/use-login";
+import { useLogin } from "@/app/(auth)/login/hooks/use-login";
 
 export default function LoginForm() {
     const { register, handleSubmit, errors, onSubmit } = useLogin();

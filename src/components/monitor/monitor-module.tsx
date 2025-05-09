@@ -1,8 +1,12 @@
+'use client';
+
 import { Droplet, Gauge, Weight, Zap } from "lucide-react";
 import MonitorStat from "./monitor-stat";
+import { useDatabase } from "@/hooks/use-database";
 
 export default function MonitorModule() {
-
+    const { data, loading, error } = useDatabase<any>("/M");
+    console.log(data);
     return (
         <div className="flex flex-row jusity-between">
             <div className="flex flex-row w-full justify-evenly items-center p-3">

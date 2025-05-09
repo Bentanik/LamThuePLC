@@ -3,10 +3,13 @@
 import { Droplet, Gauge, Waves, Weight, Zap } from "lucide-react";
 import GraphStat from "./graph-stat";
 import GraphChart from "./graph-chart";
+import { useDatabase } from "@/hooks/use-database";
 
 
 export default function GraphModule() {
-
+    const data = useDatabase("M");
+    
+    console.log(data);
     return (
         <div className="flex flex-col items-center">
             <div className="flex flex-row w-full justify-evenly items-center p-3">

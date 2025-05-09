@@ -1,7 +1,6 @@
 'use client';
 
 import AuthCarousel from "@/components/auth_carousel";
-import { MoveLeftIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useAuth } from "@/context/auth-context";

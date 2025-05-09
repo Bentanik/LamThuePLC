@@ -1,19 +1,17 @@
-import { getAuth } from "@firebase/auth";
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCucmk_gm3i4zM0TTR_1TGhGxi5NFkXqHc",
-  authDomain: "datn-215e5.firebaseapp.com",
-  databaseURL: "https://datn-215e5-default-rtdb.firebaseio.com",
-  projectId: "datn-215e5",
-  storageBucket: "datn-215e5.firebasestorage.app",
-  messagingSenderId: "505542682808",
-  appId: "1:505542682808:web:3da56f8fd80a4a2c82ac4d",
-  measurementId: "G-SY5S4YX5P4"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
 };
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
-
-export { app, auth };
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const database = getDatabase(app);

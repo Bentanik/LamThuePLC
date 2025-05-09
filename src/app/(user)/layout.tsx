@@ -11,11 +11,11 @@ export default function UserLayout({
 }>) {
     const { user } = useAuth();
 
-    useEffect(() => {
-        if (user == null) {
-            window.location.href = "/login";
-        }
-    }, [user]);
+    // useEffect(() => {
+    //     if (user == null) {
+    //         window.location.href = "/login";
+    //     }
+    // }, [user]);
 
     return (
         <div className="flex h-screen">
