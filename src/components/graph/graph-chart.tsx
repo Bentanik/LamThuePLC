@@ -1,5 +1,7 @@
 'use client'
 
+import { useDatabase } from '@/hooks/use-database';
+import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 
@@ -14,30 +16,48 @@ type Prop = {
     value2Name: string
 }
 
+type SchemeData = {
+    name: number;
+    value1: number;
+    value2: number;
+}
+
 export default function GraphChart({ value1Name, value2Name, xAxisLabel, xAxisUnit, yAxisLabel, yAxisUnit, mainLabel, mainUnit }: Prop) {
-
-    const data = [
-        { name: 200, value1: 40, value2: 123 },
-        { name: 400, value1: 55, value2: 12 },
-        { name: 600, value1: 30, value2: 51 },
-        { name: 800, value1: 80, value2: 74 },
-        { name: 1000, value1: 65, value2: 93 },
-    ];
-
+    const { data: dataM, loading: loadingM, error: errorM } = useDatabase<DataM>("/M");
+    const { data: dataC, loading: loadingC, error: errorC } = useDatabase<DataC>("/C");
+  
+    const [dataSchema, setDataSchema] = useState<SchemeData[]>([]);
+  
+    useEffect(() => {
+      let isCancelled = false;
+  
+      const fetchData = () => {
+        if (isCancelled) return;
+        if (dataM && dataC) {
+          const data: SchemeData = {
+            name: dataM.W,
+            value1: dataM.W,
+            value2: dataC.SP ?? 0,
+          };
+          setDataSchema(prev => [...prev, data]);
+        }
+  
+        setTimeout(fetchData, 2000);
+      };
+  
+      // Gọi lần đầu tiên
+      fetchData();
+  
+      return () => {
+        isCancelled = true;
+      };
+    }, [dataM, dataC]);
+  
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
             return (
                 <div className="flex flex-col gap-3 bg-white border border-gray-300 rounded-md p-3 shadow-md">
                     <p className="text-sm text-black tracking-wider">{yAxisLabel}: {label}{yAxisUnit}</p>
-                    {payload.map((entry: any, index: number) => (
-                        <p
-                            key={`tooltip-${index}`}
-                            className="text-sm tracking-wider"
-                            style={{ color: entry.color }}
-                        >
-                            {entry.name}: {entry.value}
-                        </p>
-                    ))}
                 </div>
             );
         }
@@ -50,7 +70,7 @@ export default function GraphChart({ value1Name, value2Name, xAxisLabel, xAxisUn
             <p className="px-2 text-2xl font-bold tracking-wider">{mainLabel} [{mainUnit}]</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
-                    data={data}
+                    data={dataSchema}
                     margin={{ bottom: 40 }}
                 >
                     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />

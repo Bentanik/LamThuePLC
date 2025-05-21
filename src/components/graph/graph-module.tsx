@@ -7,9 +7,9 @@ import { useDatabase } from "@/hooks/use-database";
 
 
 export default function GraphModule() {
-    const data = useDatabase("M");
-    
-    console.log(data);
+    const { data: dataM, loading: loadingM, error: errorM } = useDatabase<DataM>("/M");
+    const { data: dataC, loading: loadingC, error: errorC } = useDatabase<DataC>("/C");
+
     return (
         <div className="flex flex-col items-center">
             <div className="flex flex-row w-full justify-evenly items-center p-3">
@@ -19,7 +19,7 @@ export default function GraphModule() {
                             <Droplet className="text-[var(--droplet-col)]" size={20} />
                         </div>
                     }
-                    value="50.00"
+                    value={dataC?.SP.toFixed(2).toString() || "0.00"}
                     unit="%"
                     label="mức nước tham chiếu"
                 />
@@ -29,7 +29,7 @@ export default function GraphModule() {
                             <Waves className="text-[var(--wave-col)]" size={20} />
                         </div>
                     }
-                    value="500"
+                    value={dataM?.W.toFixed(2).toString() || "0.00"}
                     unit="Bar"
                     label="mức nước phản hồi"
                 />
@@ -39,7 +39,7 @@ export default function GraphModule() {
                             <Weight className="text-[var(--weight-col)]" size={20} />
                         </div>
                     }
-                    value="50.00"
+                    value={dataM?.P.toFixed(2).toString() || "0.00"}
                     unit="%"
                     label="áp suất phản hồi"
                 />
@@ -49,7 +49,7 @@ export default function GraphModule() {
                             <Zap className="text-[var(--electric-col)]" size={20} />
                         </div>
                     }
-                    value="50.00"
+                    value={dataM?.P.toFixed(2).toString() || "0.00"}
                     unit="V"
                     label="điện áp bơm"
                 />
@@ -62,10 +62,10 @@ export default function GraphModule() {
                     xAxisUnit={"s"}
                     yAxisLabel={"Mức Nước"}
                     yAxisUnit={"%"}
-                    value1Name={"Mực Nước"}
-                    value2Name={"Áp Suất"}
+                    value1Name={"Mức nước"}
+                    value2Name={"Mức nước tham chiếu"}
                 />
-                <GraphChart
+                {/* <GraphChart
                     mainLabel="Mức Nước"
                     mainUnit="%"
                     xAxisLabel={"Thời Gian"}
@@ -74,7 +74,7 @@ export default function GraphModule() {
                     yAxisUnit={"%"}
                     value1Name={"Mực Nước"}
                     value2Name={"Áp Suất"}
-                />
+                /> */}
             </div>
 
         </div>

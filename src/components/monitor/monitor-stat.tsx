@@ -14,7 +14,6 @@ type Prop = {
 }
 
 export default function MonitorStat({ icon, value, unit, label }: Prop) {
-
     const [mode, setMode] = useState<'view' | 'edit'>('view')
     const [val, setVal] = useState(value)
 
@@ -29,13 +28,13 @@ export default function MonitorStat({ icon, value, unit, label }: Prop) {
                 >
                     <Check color="green" size={20} />
                 </Button>
-                <Button
+                {/* <Button
                     variant={"ghost"}
                     className={`hover:cursor-pointer ${mode == 'edit' && 'hidden'}`}
                     onClick={() => setMode('edit')}
                 >
                     <Pen size={20} />
-                </Button>
+                </Button> */}
             </div>
             <input
                 className={`pr-3 pb-1 border-b border-black outline-none text-lg font-bold tracking-wider focus:ring-0 ${mode == 'view' && 'hidden'}`}
