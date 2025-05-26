@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Provider from "@/providers";
-import { AuthProvider } from "@/context/auth-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

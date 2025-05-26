@@ -18,7 +18,7 @@ export default function AuthLayout({
         if (!user) {
             router.push("/login");
         } else {
-            window.location.href = "/graph";
+            window.location.href = "/monitor";
         }
     }, [user]);
 

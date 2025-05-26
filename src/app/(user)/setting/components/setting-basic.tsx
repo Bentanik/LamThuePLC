@@ -85,6 +85,7 @@ export default function SettingBasic() {
       INV: Number(speed),
       ND: Number(tempThreshold),
       SP: Number(waterLevel),
+      CP: 1,
     }).then(() => {
       console.log("Settings updated successfully");
     }).catch((error) => {

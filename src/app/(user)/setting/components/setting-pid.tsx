@@ -168,6 +168,7 @@ export default function SettingPID() {
             updateDataC({
                 ...dataC,
                 ...formData,
+                 CP: 1,
             }).then(() => {
                 console.log("Settings updated successfully");
             }).catch((error) => {
