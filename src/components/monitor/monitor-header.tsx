@@ -26,7 +26,7 @@ export default function MonitorHeader() {
 
   return (
     <>
-      <nav className="px-5 py-3 w-full text-white bg-black">
+      {/* <nav className="px-5 py-3 text-white bg-black">
         <div className="flex flex-row justify-between w-full items-center">
           <p className="text-xl font-bold tracking-wider capitalize">Màn hình giám sát</p>
           <div className="flex flex-row gap-5 items-center">
@@ -75,7 +75,7 @@ export default function MonitorHeader() {
             </Popover>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </>
   )
 }
