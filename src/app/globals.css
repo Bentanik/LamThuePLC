@@ -80,20 +80,20 @@
   --b-hover-bg: rgba(27, 27, 27, 0.633);
   --w-hover-bg: rgb(237, 237, 237);
 
-  --droplet-bg: #E0F2FE;
-  --droplet-col: #3B82F6;
+  --droplet-bg: #e0f2fe;
+  --droplet-col: #3b82f6;
 
-  --weight-bg: #EDE9FE;
-  --weight-col: #8B5CF6;
+  --weight-bg: #ede9fe;
+  --weight-col: #8b5cf6;
 
-  --gauge-bg: #DCFCE7;
-  --gauge-col: #16A34A;
+  --gauge-bg: #dcfce7;
+  --gauge-col: #16a34a;
 
-  --electric-bg: #FEF3C7;
-  --electric-col: #F59E0B;
+  --electric-bg: #fef3c7;
+  --electric-col: #f59e0b;
 
-  --wave-bg: #CCFBF1;
-  --wave-col: #0D9488;
+  --wave-bg: #ccfbf1;
+  --wave-col: #0d9488;
 }
 
 .dark {
@@ -130,6 +130,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.font-be-vietnam-pro {
+  font-family: var(--font-be-vietnam-pro);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -138,4 +142,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }

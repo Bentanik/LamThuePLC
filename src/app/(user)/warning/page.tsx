@@ -1,12 +1,16 @@
-import WarningHeader from "@/components/warning/warning-header";
-import WarningModule from "@/components/warning/warning-module";
+import WarningComponent from "@/app/(user)/warning/components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Cảnh báo hệ thống",
+    description: "Cảnh báo hệ thống cung cấp thông tin về các vấn đề hoặc sự cố trong hệ thống",
+};
 
 export default function WarningPage() {
 
     return (
         <div>
-            <WarningHeader />
-            <WarningModule />
+            <WarningComponent />
         </div>
     )
 }

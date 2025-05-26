@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Provider from "@/providers";
@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const beVietnam = Be_Vietnam_Pro({
+  subsets: ["vietnamese"],
+  variable: "--font-be-vietnam-pro",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "LamThuePLC",
   description: "Ứng dụng quản lý thuê PLC",
@@ -28,10 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${beVietnam.variable} antialiased`}
       >
         <Provider>
-          <NextTopLoader color="#38BDF8" height={3} />
+          <NextTopLoader color="#000" height={3} />
           {children}
         </Provider>
       </body>

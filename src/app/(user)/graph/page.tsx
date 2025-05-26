@@ -1,12 +1,16 @@
-import GraphHeader from "@/components/graph/graph-header";
-import GraphModule from "@/components/graph/graph-module";
+import GraphComponent from "@/app/(user)/graph/components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Biểu đồ hệ thống",
+    description: "Biểu đồ hệ thống hiển thị dữ liệu và thông tin về hoạt động của hệ thống",
+};
 
 export default function GraphPage() {
 
     return (
         <div>
-            <GraphHeader />
-            <GraphModule />
+            <GraphComponent />
         </div>
     )
 }
