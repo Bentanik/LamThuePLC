@@ -61,7 +61,7 @@ export default function MonitorComponent() {
                             <MonitorBox
                                 icon={FanIcon}
                                 title="Tốc độ quạt hút"
-                                value={dataM?.INV.toFixed(2).toString() || "0.00"}
+                                value={dataC?.INV.toFixed(2).toString() || "0.00"}
                                 unit="Hz"
                                 status="success"
                                 trend="stable"

@@ -7,6 +7,7 @@ import { sidebar_items } from "@/constant/user";
 import { LogOutIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/auth-context";
+import ProfileDashboardMenu from "@/components/profile_dashboard_menu";
 
 export default function UserLayout({
   children,
@@ -130,6 +131,29 @@ export default function UserLayout({
         className="flex-1 py-6 pl-4 pr-4 transition-all duration-300 font-be-vietnam-pro"
         style={{ marginLeft: sidebarWidth }}
       >
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="flex items-center justify-between p-4 rounded-lg"
+        >
+          <div className="flex items-center gap-x-4">
+            <div>
+              <h2 className="text-3xl font-semibold text-gray-800">
+                TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP.HCM
+              </h2>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="z-10 flex items-center gap-x-8"
+          >
+            <ProfileDashboardMenu profile={123} />
+          </motion.div>
+        </motion.div>
         {children}
       </div>
     </div>

@@ -1,7 +1,5 @@
 'use client';
-import ProfileDashboardMenu from "@/components/profile_dashboard_menu";
 import { motion } from "framer-motion";
-import { BellIcon } from "lucide-react";
 
 export default function MonitorHeader() {
     return (
@@ -19,15 +17,6 @@ export default function MonitorHeader() {
                     </p>
                 </div>
             </div>
-
-            <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="z-10 flex items-center gap-x-8"
-            >
-                <ProfileDashboardMenu profile={123} />
-            </motion.div>
         </motion.div>
     )
 }
